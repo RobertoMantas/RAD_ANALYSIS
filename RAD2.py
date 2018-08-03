@@ -24,8 +24,8 @@ def is_number(s):
     return False
 
 # Path from where I am reading
-in_dir = "/Users/robertomantas/Documents/LTU/RAD/RAW_ALL/"
-out_dir = "/Users/robertomantas/Documents/LTU/RAD/CLEAN_ALL/"
+in_dir = "/Users/robertomantas/Documents/LTU/RAD/RAD_ANALYSIS/RAW_ALL/"
+out_dir = "/Users/robertomantas/Documents/LTU/RAD/RAD_ANALYSIS/CLEAN_ALL/"
 
 
 def read_clean_MD ():
