@@ -77,54 +77,84 @@ out_dir1 = "/data/PDS_Python/PDS_out/8_Extrema/"
 
 
 
+    #***************************************************************** Pressure Spline:
+in_file_path1 = "/Users/robertomantas/Documents/PDS_out/3_Splines/Pspline/"
+
+
+ # ***************************************************************** lowest Air Temperature:
+    ####################### nominal acquisitions:
+in_file_path8 = "/Users/robertomantas/Documents/PDS_out/2_MEAN/Mean5/Out_lowest_Temp/"
+
+    ####################### nominal and extended acquisitions:
+in_file_path2 = "/Users/robertomantas/Documents/PDS_out/2_MEAN/Mean1/Out_Lowest_Temp/"
+
+############### means GTS, sigma GTS, sigma RHSurf:
+in_file_path3 = "/Users/robertomantas/Documents/PDS_out/4_RH/RHSurface6/"
+
+# ***************************************************************** RH air at 1.5m:
+in_file_path4 = "/Users/robertomantas/Documents/PDS_out/4_RH/RHSurface5/"
+
+# ***************************************************************** Global, diffuse and direct irradiance:
+in_file_path5 = "/Users/robertomantas/Documents/PDS_out/5_UV/"
+
+# ***************************************************************** Derivative Spline GTS
+in_file_path6 = "/Users/robertomantas/Documents/PDS_out/6_HEA_COO/splineGTS/"
+
+# ***************************************************************** Difference AirTemp, GTS
+in_file_path7 = "/Users/robertomantas/Documents/PDS_out/7_AirGround_Tdiff/"
+
+# ***************************************************************** u*rho*(Tg-Ta)
+in_file_path9 = "/Users/robertomantas/Documents/PDS_out/2_MEAN/Mean5/Out_mean_P_Tg_Ta_rho/"
+
+
+# ***************************************************************** ENV & MOD from FMT V.6 (RDR_03.07.2015) para temperatura booms y UV temp
+in_file_path10 = "/Users/robertomantas/Documents/PDS_out/1_AWK/CLEAN_ALL/MD_CLEAN/"
+in_file_path11 = "/Users/robertomantas/Documents/PDS_out/1_AWK/CLEAN_ALL/NV_CLEAN/"
+    
+    
+# ***************************************************************** ADR from FMT V.7 (RDR_18.02.2016) topography files
+sun_topo_file_path = "/Users/robertomantas/Documents/PDS_out/1_AWK/CLEAN_ALL/ADR_CLEAN/"
+
+
+#in_file_path12 = "/Users/robertomantas/Documents/PDS_out/Other_files/"
+#in_file_path12 = "/Users/robertomantas/Documents/PDS_out/Other_files/"
+in_file_path12 = "/Users/robertomantas/Documents/Code_Python/Other_files/"
+#in_file_path12 = "/Users/robertomantas/Documents/PDS_out/Other_files/"
+
+in_file_path13 = "/Users/robertomantas/Documents/PDS_out/TOA/"
+
+in_file_path14 = "/Users/robertomantas/Documents/PDS_out/9_VMR_GTS/VMR_GTS_P_MAX/"
+
+in_file_path15 = "/Users/robertomantas/Documents/PDS_out/10_ATS/ATS_Boom1_Global/"
+
+in_file_path16 = "/Users/robertomantas/Documents/PDS_out/10_ATS/ATS_Boom2_Global/"
+
+in_file_path17 = "/data/RAD/PDS_out/2_MEAN_MAX_MIN/"
+
+
+
+
+
+
+out_dir1 = "/Users/robertomantas/Documents/PDS_out/8_Extrema/"
+
+
+
+
 #Time #Pressure #Air Temperature #Ground Temperature #RH Temperature #RH 1.5m #Mass Mixing Ratio y Volumen Mixing Ratio #RH Surface
 #RH Subsurface # 45-62Global Irradiance #63-81Diffuse Irradiance # 82-89 DerivativeGTS # 90-96 max min Sensb_HeatFlux #Difference AirTemp-GTS
 # Diurnal mean and rms air Temp # Diurnal mean and rms ground Temp # Diurnal mean and rms Sensb_HeatFlux # TOA, tauUV
 # max absolute Diffence T1-T2 # max & min UV Temperature
-headerOut_extrema = "[1]Sol [2]ls [3]sunrise [4]sunset " \
-"[5]LMST_maxP [6]SZA_maxP [7]maxP [8]err_maxP [9]LMST_minP [10]SZA_minP [11]minP [12]err_minP "\
-"[13]LMST_maxTa [14]SZA_maxTa [15]maxTa [16]err_maxTa [17]LMST_minTa [18]SZA_minTa [19]minTa [20]err_minTa " \
-"[21]LMST_maxGTS [22]SZA_maxGTS [23]maxGTS [24]Std.err_maxGTS [25]LMST_minGTS [26]SZA_minGTS [27]minGTS [28]Std.err_minGTS "\
-"[29]LMST_minRHSTemp [30]SZA_minRHSTemp [31]minRHSTemp [32]err_minRHSTemp "\
-"[33]LMST_maxRH [34]SZA_maxRH [35]maxRH [36]err_maxRH "\
-"[37]maxMR [38]maxVMR "\
-"[39]LMST_maxRH_Surf [40]SZA_maxRH_Surf [41]maxRH_Surf [42]Std.err_maxRH_Surf "\
-"[43]maxRH_Sub_Surf [44]err_maxRH_Sub_Surf "\
-"[45]LMST_maxUV_global_A [46]SZA_maxUV_global_A [47]maxUV_global_A "\
-"[48]LMST_maxUV_global_B [49]SZA_maxUV_global_B [50]maxUV_global_B "\
-"[51]LMST_maxUV_global_C [52]SZA_maxUV_global_C [53]maxUV_global_C "\
-"[54]LMST_maxUV_global_ABC [55]SZA_maxUV_global_ABC [56]maxUV_global_ABC "\
-"[57]LMST_maxUV_global_D [58]SZA_maxUV_global_D [59]maxUV_global_D "\
-"[60]LMST_maxUV_global_E [61]SZA_maxUV_global_E [62]maxUV_global_E "\
-"[63]LMST_maxUV_diffuse_A [64]SZA_maxUV_diffuse_A [65]maxUV_diffuse_A "\
-"[66]LMST_maxUV_diffuse_B [67]SZA_maxUV_diffuse_B [68]maxUV_diffuse_B "\
-"[69]LMST_maxUV_diffuse_C [70]SZA_maxUV_diffuse_C [71]maxUV_diffuse_C "\
-"[72]LMST_maxUV_diffuse_ABC [73]SZA_maxUV_diffuse_ABC [74]maxUV_diffuse_ABC "\
-"[75]LMST_maxUV_diffuse_D [76]SZA_maxUV_diffuse_D [77]maxUV_diffuse_D "\
-"[78]LMST_maxUV_diffuse_E [79]SZA_maxUV_diffuse_E [80]maxUV_diffuse_E [81]err_UV "\
-"[82]LMST_maxDerivGTS [83]SZA_maxDerivGTS [84]maxDerivGTS [85]err_1Deriv "\
-"[86]LMST_minDerivGTS [87]SZA_minDerivGTS [88]minDerivGTS [89]err_1Deriv "\
-"[90]LMST_maxSensb_HeatFlux [91]SZA_maxSensb_HeatFlux [92]maxSensb_HeatFlux "\
-"[93]LMST_minSensb_HeatFlux [94]SZA_minSensb_HeatFlux [95]minSensb_HeatFlux [96]err_Sensb_HeatFlux "\
-"[97]diurnalMean_Vertical_Thermal_Gradient [98]diurnalRMS_Vertical_Thermal_Gradient "\
-"[99]diurnalMean_Ta [100]diurnalRMS_Ta "\
-"[101]diurnalMean_Tg [102]diurnalRMS_Tg "\
-"[103]diurnalMean_Sensb_HeatFlux [104]diurnalRMS_Sensb_HeatFlux "\
-"[105]TOA [106]tauUV "\
-"[107]LMST_maxAbsDiff(T1-T2) [108]SZA_maxAbsDiff(T1-T2) [109]maxAbsDiff(T1-T2) [110]Boom_T1 [111]Boom_T2 "\
-"[112]LMST_maxUV_Temp [113]SZA_maxUV_Temp [114]UV_Temp [115]LMST_minUV_Temp [116]SZA_minUV_Temp [117]minUV_Temp "\
-"[118]VMR_MAX_21 [119]Time_21 [120]GT_AVG_21 [121]P_AVG_21 [122]VMR_MAX_22 [123]Time_22 [124]GT_AVG_22 [125]P_AVG_22 "\
-"[126]VMR_MAX_23 [127]Time_23 [128]GT_AVG_23 [129]P_AVG_23 [130]VMR_MAX_24 [131]Time_24 [132]GT_AVG_24 [133]P_AVG_24 "\
-"[134]VMR_MAX_01 [135]Time_01 [136]GT_AVG_01 [137]P_AVG_01 [138]VMR_MAX_02 [139]Time_02 [140]GT_AVG_02 [141]P_AVG_02 "\
-"[142]VMR_MAX_03 [143]Time_03 [144]GT_AVG_03 [145]P_AVG_03 [146]VMR_MAX_04 [147]Time_04 [148]GT_AVG_04 [149]P_AVG_04 "\
-"[150]VMR_MAX_05 [151]Time_05 [152]GT_AVG_05 [153]P_AVG_05 [154]VMR_MAX_06 [155]Time_06 [156]GT_AVG_06 [157]P_AVG_06 "\
-"[158]VMR_MAX_07 [159]Time_07 [160]GT_AVG_07 [161]P_AVG_07"\
-"[162]VMR_MAX_08 [163]Time_08 [164]GT_AVG_08 [165]P_AVG_08 [166]Time_m_max_B1 [167]m_max_B1 [168]Pressure_m_max_B1 [169]Tf_m_max_B1 "\
-"[170]Time_m_min_B1 [171]m_min_B1 [172]Pressure_m_min_B1 [173]Tf_m_min_B1 [174]Wind_Speed_max_B1 [175]Avg_Wind_Direction_B1 "\
-"[176]v_max_with_orientation_B1 [177]Wind_Orientation_v_max_B1 [178]Time_m_max_B2 [179]m_max_B2 [180]Pressure_m_max_B2 "\
-"[181]Tf_m_max_B2 [182]Time_m_min_B2 [183]m_min_B2 [184]Pressure_m_min_B2 [185]Tf_m_min_B2 [186]Wind_Speed_max_B2 "\
-"[187]Avg_Wind_Direction_B2 [188]v_max_with_orientation_B2 [189]Wind_Orientation_v_max_B2"\
-"[190]AVG_B [191]LMST_MAX_B [192]MAX_B [193]LMST_MIN_B [194]MIN_B [195]AVG_E [196]LMST_MAX_E [197]MAX_E [198]LMST_MIN_E [199]MIN_En"\
+
+
+# headerOut_extrema = "[1]Sol [2]ls " \
+# "[3]LMST_maxP [4]maxP  [5]LMST_minP [6]minP "\
+# "[7]LMST_maxTa  [8]maxTa [9]LMST_minTa [10]minTa " \
+# "[11]LMST_maxGTS [12]maxGTS [13]LMST_minGTS [14]minGTS  "\
+# "[15]LMST_maxUV_global_ABC [16]maxUV_global_ABC "\
+
+headerOut_extrema = "[1]Sol [2]ls [3]maxP  [4]minP [5]maxTa [6]minTa [7]maxGTS  [8]minGTS [9]]maxUV_global_ABC" 
+
 
 
 
@@ -1797,7 +1827,7 @@ def Extrema():
     err_1Deriv = "0.0014"
     err_Sensb_HeatFlux = "0.0000"
 
-    with open(out_dir1 + 'extrema_press_lowestTemp_GTS_RH_MR_UV_Rate_TherGrad_HeatFlux_TOA_absBoomDiff_sol_00010_02027.dat','w') as output_file_Extrema:
+    with open(out_dir1 + 'extrema_press_TempAir_GTS_UVABC_sol_00351_01018_2.dat','w') as output_file_Extrema:
         
         output_file_Extrema.write(str(headerOut_extrema) +'\n')                        
         
@@ -1805,18 +1835,8 @@ def Extrema():
         sun1, abs_maxP, time_abs_maxP, abs_minP, time_abs_minP, SZA_maxP, SZA_minP = ExtremaP()  
         sun2, abs_maxT, Time_abs_maxT, abs_minT, Time_abs_minT,SZA_maxT, SZA_minT = ExtremaLT()  
         sun3, abs_maxGTS, time_abs_maxGTS, abs_maxRH_Surf, Time_abs_maxRH_Surf, abs_minGTS, time_abs_minGTS, SZA_maxGTS, SZA_minGTS, SZA_maxRH_Surf, rms_Tg_nominal, mean_Tg_nominal, st_Dev_GTS_Max, st_Dev_GTS_Min, st_Dev_RH_Surf_Max = ExtremaGTS_RHSurf_Sigmas()  
-        sun4, abs_maxRH, time_abs_maxRH, abs_minRH_Temp, Time_abs_minRH_Temp, SZA_maxRH, SZA_minRH_Temp, VMR, MR = ExtremaRH()  
         sun5, abs_maxUV_global_A, timeLMST_UV_global_A, abs_maxUV_global_B, timeLMST_UV_global_B, abs_maxUV_global_C, timeLMST_UV_global_C, abs_maxUV_global_ABC, timeLMST_UV_global_ABC, abs_maxUV_global_D, timeLMST_UV_global_D, abs_maxUV_global_E, timeLMST_UV_global_E, abs_maxUV_diffuse_A, timeLMST_UV_diffuse_A, abs_maxUV_diffuse_B, timeLMST_UV_diffuse_B, abs_maxUV_diffuse_C, timeLMST_UV_diffuse_C, abs_maxUV_diffuse_ABC, timeLMST_UV_diffuse_ABC, abs_maxUV_diffuse_D, timeLMST_UV_diffuse_D, abs_maxUV_diffuse_E, timeLMST_UV_diffuse_E, max_SZA_Arr_global_A, max_SZA_Arr_global_B, max_SZA_Arr_global_C, max_SZA_Arr_global_ABC, max_SZA_Arr_global_D, max_SZA_Arr_global_E, max_SZA_Arr_diffuse_A, max_SZA_Arr_diffuse_B, max_SZA_Arr_diffuse_C, max_SZA_Arr_diffuse_ABC, max_SZA_Arr_diffuse_D, max_SZA_Arr_diffuse_E, current_ABC1_TOA, tau_UV = ExtremaUV()
-        sun6, abs_maxUV_Temp, Time_abs_maxUV_Temp, abs_minUV_Temp, Time_abs_minUV_Temp, SZA_maxUV_Temp, SZA_minUV_Temp = ExtremaNV()
-        sun7, abs_maxDerivGTS, Time_abs_maxDerivGTS, abs_minDerivGTS, Time_abs_minDerivGTS, SZA_maxDerivGTS, SZA_minDerivGTS = ExtremaDerivGTS()
-        sun8, abs_maxSensb_HeatFlux, Time_abs_maxSensb_HeatFlux, abs_minSensb_HeatFlux, Time_abs_minSensb_HeatFlux, SZA_maxSensb_HeatFlux, SZA_minSensb_HeatFlux, rms_Sensb_HeatFlux, mean_Sensb_HeatFlux = ExtremaHeatFlux()
-        sun9, rms_Difference, mean_Difference = ExtremaFileDiff()
-        sun10, rms_Ta_nominal, mean_Ta_nominal = ExtremaNOMINAL()
         sun11, ls, sunriseTime, sunsetTime = sunset_Sunrise()
-        sun12, EXTREMA_VMR_GTS = Extrema_VMR_GTS_P_MAX()
-        sun13, EXTREMA_boom1 = Extrema_Boom1_Global()
-        sun14, EXTREMA_boom2 = Extrema_Boom2_Global()
-        sun15, AVERAGE_MAX_MIN = RAD_AVG_MAX_MIN()
 
         
         
@@ -1845,82 +1865,25 @@ def Extrema():
                                             if d == c:
                                                 pos0 = sun0.index(d)
 
-                                                for e in sun4:
-                                                    if e == d:
-                                                        pos4 = sun4.index(e)
+                                                for f in sun5:
+                                                    if f == e:
+                                                        pos5 = sun5.index(f)
 
-                                                        for f in sun5:
-                                                            if f == e:
-                                                                pos5 = sun5.index(f)
+                                                        for m in sun11:
+                                                            if m == f:
+                                                                pos11 = sun11.index(m)
+                                        
 
-                                                                for g in sun6:
-                                                                    if g == f:
-                                                                        pos6 = sun6.index(g)
+                                                                # # Surface RH:
 
-                                                                        for h in sun7:
-                                                                            if h == g:
-                                                                                pos7 = sun7.index(h)
-
-                                                                                for j in sun8:
-                                                                                    if j == h:
-                                                                                        pos8 = sun8.index(j)
-
-                                                                                        for k in sun9:
-                                                                                            if k == j:
-                                                                                                pos9 = sun9.index(k)
-
-                                                                                                for l in sun10:
-                                                                                                    if l == k:
-                                                                                                        pos10 = sun10.index(l)
-
-                                                                                                        for m in sun11:
-                                                                                                            if m == l:
-                                                                                                                pos11 = sun11.index(m)
-                                                                                                                for n in sun12:
-                                                                                                                    if n == m:
-                                                                                                                        pos12 = sun12.index(n)
-                                                                                                                        for o in sun13:
-                                                                                                                            if o == n:
-                                                                                                                                pos13 = sun13.index(o)
-                                                                                                                                for p in sun14:
-                                                                                                                                    if p == o:
-                                                                                                                                        pos14 = sun14.index(p)
-                                                                                                                                        for q in sun15:
-                                                                                                                                            if q == p:
-                                                                                                                                                pos15 = sun15.index(q)
-
-                                                
-
-                                                                                                                Sub_Temp = (abs_minGTS[pos3]) + (abs_maxGTS[pos3] - abs_minGTS[pos3])/2.3
-
-                                                                                                                # # Surface RH:
-                                                                                                                abs_maxRH_Sub_Surf = calling_subroutines((abs_maxRH[pos4]), (abs_minRH_Temp[pos4]), abs_maxP[pos1], Sub_Temp)
-
-                                                                                                                abs_maxDiff[pos0] = round(abs_maxDiff[pos0], 2)
-                                                                                                                abs_maxDerivGTS[pos7] = round(abs_maxDerivGTS[pos7], 6)
-                                                                                                                abs_minDerivGTS[pos7] = round(abs_minDerivGTS[pos7], 6)
-                                                                                                                abs_maxRH_Sub_Surf = round(abs_maxRH_Sub_Surf, 3)
-                                                                                                                mean_Difference[pos9] = round(mean_Difference[pos9], 2)
-                                                                                                                rms_Difference[pos9] = round(rms_Difference[pos9], 2)
-                                                                                                                mean_Ta_nominal[pos10] = round(mean_Ta_nominal[pos10], 2)
-                                                                                                                rms_Ta_nominal[pos10] = round(rms_Ta_nominal[pos10], 2)
-                                                                                                                # print("len(ls)")
-                                                                                                                # print(len(ls))
-                                                                                                                # print("pos11 "+str(pos11))
-                                                                                                                ls[pos11] = round(float(ls[pos11]), 3)
-                                                                                                                mean_Tg_nominal[pos3] = round(mean_Tg_nominal[pos3], 2)
-                                                                                                                rms_Tg_nominal[pos3] = round(rms_Tg_nominal[pos3], 2)
-                                                                                                                mean_Sensb_HeatFlux[pos8] = round(mean_Sensb_HeatFlux[pos8], 4)
-                                                                                                                rms_Sensb_HeatFlux[pos8] = round(rms_Sensb_HeatFlux[pos8], 4)
-                                                                                                                tau_UV[pos5] = round(tau_UV[pos5], 3)
-                                                                                                                
-                                                                                                                
-                                                                                                                output_file_Extrema.write(str(sun1[pos1]) +'   ' + str(ls[pos11])+'   '+ str(sunriseTime[pos11])+'   '+ str(sunsetTime[pos11])+'   '+ str(time_abs_maxP[pos1])+'   '+ str(SZA_maxP[pos1])+'   '+str(abs_maxP[pos1])+'   '+str(err_maxP)+'   '+ str(time_abs_minP[pos1])+'   '+ str(SZA_minP[pos1])+'   '+str(abs_minP[pos1])+'   '+str(err_minP)+'   '+ str(Time_abs_maxT[pos2])+'   '+ str(SZA_maxT[pos2])+'   '+str(abs_maxT[pos2])+'   '+str(err_maxTa)+'   '+ str(Time_abs_minT[pos2])+'   '+ str(SZA_minT[pos2])+'   '+str(abs_minT[pos2])+'   '+str(err_minTa)+'   '+ str(time_abs_maxGTS[pos3])+'   '+ str(SZA_maxGTS[pos3])+'   '+str(abs_maxGTS[pos3])+'   '+str(st_Dev_GTS_Max[pos3])+'   '+ str(time_abs_minGTS[pos3])+'   '+ str(SZA_minGTS[pos3])+'   '+str(abs_minGTS[pos3])+'   '+str(st_Dev_GTS_Min[pos3])+ '   '+ str(Time_abs_minRH_Temp[pos4])+ '   '+ str(SZA_minRH_Temp[pos4]) + '   '+ str(abs_minRH_Temp[pos4])+'   '+str(err_minRHTemp)+ '   '+ str(time_abs_maxRH[pos4])+ '   '+ str(SZA_maxRH[pos4]) + '   '+ str(abs_maxRH[pos4]) +'   '+str(err_maxRH) + '   '+ str(MR[pos4])+ '   '+ str(VMR[pos4]) +
-                                                                                                                '   '+ str(Time_abs_maxRH_Surf[pos3])+ '   '+ str(SZA_maxRH_Surf[pos3]) + '   '+ str(abs_maxRH_Surf[pos3]) + '   '+ str(st_Dev_RH_Surf_Max[pos3])+ '   '+ str(abs_maxRH_Sub_Surf)+ '   '+ str(err_maxRH_Sub_Surf)+ '   '+ str(timeLMST_UV_global_A[pos5])+ '   '+ str(max_SZA_Arr_global_A[pos5]) + '   '+ str(abs_maxUV_global_A[pos5])+ '   '+ str(timeLMST_UV_global_B[pos5])+ '   '+ str(max_SZA_Arr_global_B[pos5]) + '   '+ str(abs_maxUV_global_B[pos5])+ '   '+ str(timeLMST_UV_global_C[pos5])+ '   '+ str(max_SZA_Arr_global_C[pos5]) + '   '+ str(abs_maxUV_global_C[pos5])+ '   '+ str(timeLMST_UV_global_ABC[pos5])+ '   '+ str(max_SZA_Arr_global_ABC[pos5]) + '   '+ str(abs_maxUV_global_ABC[pos5])+ '   '+ str(timeLMST_UV_global_D[pos5])+ '   '+ str(max_SZA_Arr_global_D[pos5]) + '   '+ str(abs_maxUV_global_D[pos5])+ '   '+ str(timeLMST_UV_global_E[pos5])+ '   '+ str(max_SZA_Arr_global_E[pos5]) + '   '+ str(abs_maxUV_global_E[pos5])+ 
-                                                                                                                '   '+ str(timeLMST_UV_diffuse_A[pos5]) + '   '+ str(max_SZA_Arr_diffuse_A[pos5]) + '   '+ str(abs_maxUV_diffuse_A[pos5])+ '   '+ str(timeLMST_UV_diffuse_B[pos5])+ '   '+ str(max_SZA_Arr_diffuse_B[pos5]) + '   '+ str(abs_maxUV_diffuse_B[pos5])+ '   '+ str(timeLMST_UV_diffuse_C[pos5])+ '   '+ str(max_SZA_Arr_diffuse_C[pos5]) + '   '+ str(abs_maxUV_diffuse_C[pos5])+ '   '+ str(timeLMST_UV_diffuse_ABC[pos5])+ '   '+ str(max_SZA_Arr_diffuse_ABC[pos5]) + '   '+ str(abs_maxUV_diffuse_ABC[pos5])+ '   '+ str(timeLMST_UV_diffuse_D[pos5])+ '   '+ str(max_SZA_Arr_diffuse_D[pos5]) + '   '+ str(abs_maxUV_diffuse_D[pos5])+ '   '+ str(timeLMST_UV_diffuse_E[pos5]) + '   '+ str(max_SZA_Arr_diffuse_E[pos5])+ '   '+ str(abs_maxUV_diffuse_E[pos5])+ '   '+ str(err_UV)+ '   '+ str(Time_abs_maxDerivGTS[pos7])+ '   '+ str(SZA_maxDerivGTS[pos7]) + '   '+ str(abs_maxDerivGTS[pos7])+ '   '+ str(err_1Deriv)+
-                                                                                                                '   '+ str(Time_abs_minDerivGTS[pos7])+ '   '+ str(SZA_minDerivGTS[pos7]) + '   '+ str(abs_minDerivGTS[pos7])+ '   '+ str(err_1Deriv)+ '   '+ str(Time_abs_maxSensb_HeatFlux[pos8])+ '   '+ str(SZA_maxSensb_HeatFlux[pos8]) + '   '+ str(abs_maxSensb_HeatFlux[pos8])+ '   '+ str(Time_abs_minSensb_HeatFlux[pos8]) + '   '+ str(SZA_minSensb_HeatFlux[pos8])+ '   '+ str(abs_minSensb_HeatFlux[pos8])+ '   '+ str(err_Sensb_HeatFlux)+ '   '+ str(mean_Difference[pos9]) + '   '+ str(rms_Difference[pos9])+ '   '+ str(mean_Ta_nominal[pos10])+ '   '+ str(rms_Ta_nominal[pos10])+ '   '+ str(mean_Tg_nominal[pos3])+ '   '+ str(rms_Tg_nominal[pos3])+ '   '+ str(mean_Sensb_HeatFlux[pos8])+ '   '+ str(rms_Sensb_HeatFlux[pos8])+ '   '+ str(current_ABC1_TOA[pos5])+ '   '+ str(tau_UV[pos5])+ '   '+ str(time_abs_maxDiff[pos0])+ '   '+ str(SZA_abs_maxDiff[pos0])+ '   '+str(abs_maxDiff[pos0])+ '   '+str(T1[pos0])+ '   '+str(T2[pos0])+ '   '+ str(Time_abs_maxUV_Temp[pos6])+ '   '+ str(SZA_maxUV_Temp[pos6])+ '   '+str(abs_maxUV_Temp[pos6])+ '   '+ str(Time_abs_minUV_Temp[pos6])+ '   '+ str(SZA_minUV_Temp[pos6])+ 
-                                                                                                                '   '+str(abs_minUV_Temp[pos6]) + '   ' + str(EXTREMA_VMR_GTS[pos12])+ '   ' + str(EXTREMA_boom1[pos13])+ '   ' + str(EXTREMA_boom2[pos14]) + '   ' + str(AVERAGE_MAX_MIN[pos15]) + '\n')               
-                                                                                                            
+                                                                # print("len(ls)")
+                                                                # print(len(ls))
+                                                                # print("pos11 "+str(pos11))
+                                                                ls[pos11] = round(float(ls[pos11]), 3)
+                                                                
+                                                                
+                                                                output_file_Extrema.write(str(sun1[pos1]) +'   ' + str(ls[pos11])+'   '+str(abs_maxP[pos1])+'   '+str(abs_minP[pos1])+'   '+str(abs_maxT[pos2])+'   '+str(abs_minT[pos2])+'   '+str(abs_maxGTS[pos3])+'   '+str(abs_minGTS[pos3]) + '   '+ str(abs_maxUV_global_ABC[pos5])+'\n')               
+                                                            
 
 
 
