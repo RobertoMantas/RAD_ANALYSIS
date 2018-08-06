@@ -117,7 +117,7 @@ def read_clean_MD ():
                             #         +' '+str(col[62])+' '+str(col[63])+' '+str(col[64])+' '+str(col[65])+' '+str(col[66])+' '+str(col[67])+' '+str(col[68])+' '+str(col[69]) +' '+str(col[70])+' '+str(col[71])+' '+str(col[72])+' '+str(col[73])+' '+str(col[74])+' '+str(col[75])+' '+str(col[76])+' '+str(col[77])+' '+str(col[78])+'\n')
 
                         
-read_clean_MD()
+#read_clean_MD()
 
 
 in_dir = "/Users/robertomantas/Documents/GitHub/RAD_ANALYSIS/PDS_out/1_AWK/CLEAN_ALL/"
@@ -143,14 +143,14 @@ def avg_max_min():
                 #         num_lines = len([l for l in lines if l.strip(' \n') != ''])
                 # n = (len(open(in_dir+file).readlines()))
                 sun = filename[4:9]
-                print(sun)
+                #print(sun)
                 
                 with open(in_dir+file,'r') as input_file1, open(out_dir + 'AVERAGE_MAX_MIN_' +sun+'.dat', 'w') as output_file:
                     lmst_Array = []
                     data_B_Array = []
                     data_E_Array = []
                     n = (len(open(in_dir+file).readlines()))
-                    output_file.write("[1]AVG_B [2]LMST_MAX_B [3]MAX_B [4]LMST_MIN_B [5]MIN_B [6]AVG_E [7]LMST_MAX_E [8]MAX_E [9]LMST_MIN_E [10]MIN_E \n")
+                    #output_file.write("[1]AVG_B [2]LMST_MAX_B [3]MAX_B [4]LMST_MIN_B [5]MIN_B [6]AVG_E [7]LMST_MAX_E [8]MAX_E [9]LMST_MIN_E [10]MIN_E \n")
                     cont = 0
                     q = 0
 

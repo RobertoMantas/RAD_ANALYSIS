@@ -1800,7 +1800,7 @@ def Extrema():
                                                 pos0 = sun0.index(d)
 
                                                 for f in sun5:
-                                                    if f == e:
+                                                    if f == d:
                                                         pos5 = sun5.index(f)
 
                                                         for m in sun11:

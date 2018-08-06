@@ -268,6 +268,8 @@ def sunset_Sunrise():
                             array3.append(time1)
                             time2 = (colSUN[4])
                             array4.append(time2)
+
+    
                 
 
 
@@ -1817,6 +1819,41 @@ def Extrema():
         sun13, EXTREMA_boom1 = Extrema_Boom1_Global()
         sun14, EXTREMA_boom2 = Extrema_Boom2_Global()
         sun15, AVERAGE_MAX_MIN = RAD_AVG_MAX_MIN()
+
+        print("0")
+        print(sorted(sun0))
+        print("1")
+        print(sorted(sun1))
+        print("2")
+        print(sorted(sun2))
+        print("3")
+        print(sorted(sun3))
+        print("4")
+        print(sorted(sun4))
+        print("5")
+        print(sorted(sun5))
+        print("6")
+        print(sorted(sun6))
+        print("7")
+        print(sorted(sun7))
+        print("8")
+        print(sorted(sun8))
+        print("9")
+        print(sorted(sun9))
+        print("10")
+        print(sorted(sun10))
+        print("11")
+        print(sorted(sun11))
+        print("12")
+        print(sorted(sun12))
+        print("13")
+        print(sorted(sun13))
+        print("14")
+        print(sorted(sun14))
+        print("15")
+        print(sorted(sun15))
+                
+
 
         
         

@@ -132,10 +132,6 @@ in_file_path16 = "/Users/robertomantas/Documents/PDS_out/10_ATS/ATS_Boom2_Global
 in_file_path17 = "/data/RAD/PDS_out/2_MEAN_MAX_MIN/"
 
 
-
-
-
-
 out_dir1 = "/Users/robertomantas/Documents/PDS_out/8_Extrema/"
 
 
@@ -147,11 +143,7 @@ out_dir1 = "/Users/robertomantas/Documents/PDS_out/8_Extrema/"
 # max absolute Diffence T1-T2 # max & min UV Temperature
 
 
-# headerOut_extrema = "[1]Sol [2]ls " \
-# "[3]LMST_maxP [4]maxP  [5]LMST_minP [6]minP "\
-# "[7]LMST_maxTa  [8]maxTa [9]LMST_minTa [10]minTa " \
-# "[11]LMST_maxGTS [12]maxGTS [13]LMST_minGTS [14]minGTS  "\
-# "[15]LMST_maxUV_global_ABC [16]maxUV_global_ABC "\
+# headerOut_extrema = "[1]Sol [2]ls [3]LMST_maxP [4]maxP [5]LMST_minP [6]minP [7]LMST_maxTa [8]maxTa [9]LMST_minTa [10]minTa [11]LMST_maxGTS [12]maxGTS [13]LMST_minGTS [14]minGTS [15]LMST_maxUV_global_ABC [16]maxUV_global_ABC "
 
 headerOut_extrema = "[1]Sol [2]ls [3]maxP  [4]minP [5]maxTa [6]minTa [7]maxGTS  [8]minGTS [9]]maxUV_global_ABC" 
 
@@ -1866,7 +1858,7 @@ def Extrema():
                                                 pos0 = sun0.index(d)
 
                                                 for f in sun5:
-                                                    if f == e:
+                                                    if f == d:
                                                         pos5 = sun5.index(f)
 
                                                         for m in sun11:
