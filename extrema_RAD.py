@@ -359,9 +359,14 @@ def RAD_AVG_MAX_MIN():
                 
                 sun = file[16:21]
                 with open(in_file_path17 + 'AVERAGE_MAX_MIN_' + sun + '.dat','r') as input_file:
+                    if (os.stat(in_file_path17 + 'AVERAGE_MAX_MIN_' + sun + '.dat').st_size == 0):
+                        i = -1.00
+                        array1.append(i)
                     for i in input_file:
                         col = i.split()
+                        #print(len(col))
                         array1.append(i)
+                            
                 sun_Arr.append(sun)
                 
     return sun_Arr, array1
@@ -1801,7 +1806,8 @@ def Extrema():
 
     with open(out_dir1 + 'extrema_press_lowestTemp_GTS_RH_MR_UV_Rate_TherGrad_HeatFlux_TOA_absBoomDiff_sol_00010_02027.dat','w') as output_file_Extrema:
         
-        output_file_Extrema.write(str(headerOut_extrema) +'\n')                        
+        output_file_Extrema.write(str(headerOut_extrema) +'\n')      
+
         
         sun0, abs_maxDiff, time_abs_maxDiff, SZA_abs_maxDiff, T1, T2 = ExtremaMDB1B2()
         sun1, abs_maxP, time_abs_maxP, abs_minP, time_abs_minP, SZA_maxP, SZA_minP = ExtremaP()  
@@ -1819,40 +1825,42 @@ def Extrema():
         sun13, EXTREMA_boom1 = Extrema_Boom1_Global()
         sun14, EXTREMA_boom2 = Extrema_Boom2_Global()
         sun15, AVERAGE_MAX_MIN = RAD_AVG_MAX_MIN()
-
-        print("0")
-        print(sorted(sun0))
-        print("1")
-        print(sorted(sun1))
-        print("2")
-        print(sorted(sun2))
-        print("3")
-        print(sorted(sun3))
-        print("4")
-        print(sorted(sun4))
-        print("5")
-        print(sorted(sun5))
-        print("6")
-        print(sorted(sun6))
-        print("7")
-        print(sorted(sun7))
-        print("8")
-        print(sorted(sun8))
-        print("9")
-        print(sorted(sun9))
-        print("10")
-        print(sorted(sun10))
-        print("11")
-        print(sorted(sun11))
-        print("12")
-        print(sorted(sun12))
-        print("13")
-        print(sorted(sun13))
-        print("14")
-        print(sorted(sun14))
-        print("15")
-        print(sorted(sun15))
         
+
+        # print("0")
+        # print(sorted(sun0))
+        # print("1")
+        # print(sorted(sun1))
+        # print("2")
+        # print(sorted(sun2))
+        # print("3")
+        # print(sorted(sun3))
+        # print("4")
+        # print(sorted(sun4))
+        # print("5")
+        # print(sorted(sun5))
+        # print("6")
+        # print(sorted(sun6))
+        # print("7")
+        # print(sorted(sun7))
+        # print("8")
+        # print(sorted(sun8))
+        # print("9")
+        # print(sorted(sun9))
+        # print("10")
+        # print(sorted(sun10))
+        # print("11")
+        # print(sorted(sun11))
+        # print("12")
+        # print(sorted(sun12))
+        # print("13")
+        # print(sorted(sun13))
+        # print("14")
+        # print(sorted(sun14))
+        # print("15")
+        # print(sorted(sun15))
+        
+
 
 
         
@@ -1924,7 +1932,6 @@ def Extrema():
                                                                                                                                         pos14 = sun14.index(p)
                                                                                                                                         for q in sun15:
                                                                                                                                             if q == p:
-                                                                                                                                                print(str(q))
                                                                                                                                                 pos15 = sun15.index(q)
 
                                                                                                                                                 Sub_Temp = (abs_minGTS[pos3]) + (abs_maxGTS[pos3] - abs_minGTS[pos3])/2.3
@@ -1956,7 +1963,7 @@ def Extrema():
                                                                                                                                                 '   '+ str(timeLMST_UV_diffuse_A[pos5]) + '   '+ str(max_SZA_Arr_diffuse_A[pos5]) + '   '+ str(abs_maxUV_diffuse_A[pos5])+ '   '+ str(timeLMST_UV_diffuse_B[pos5])+ '   '+ str(max_SZA_Arr_diffuse_B[pos5]) + '   '+ str(abs_maxUV_diffuse_B[pos5])+ '   '+ str(timeLMST_UV_diffuse_C[pos5])+ '   '+ str(max_SZA_Arr_diffuse_C[pos5]) + '   '+ str(abs_maxUV_diffuse_C[pos5])+ '   '+ str(timeLMST_UV_diffuse_ABC[pos5])+ '   '+ str(max_SZA_Arr_diffuse_ABC[pos5]) + '   '+ str(abs_maxUV_diffuse_ABC[pos5])+ '   '+ str(timeLMST_UV_diffuse_D[pos5])+ '   '+ str(max_SZA_Arr_diffuse_D[pos5]) + '   '+ str(abs_maxUV_diffuse_D[pos5])+ '   '+ str(timeLMST_UV_diffuse_E[pos5]) + '   '+ str(max_SZA_Arr_diffuse_E[pos5])+ '   '+ str(abs_maxUV_diffuse_E[pos5])+ '   '+ str(err_UV)+ '   '+ str(Time_abs_maxDerivGTS[pos7])+ '   '+ str(SZA_maxDerivGTS[pos7]) + '   '+ str(abs_maxDerivGTS[pos7])+ '   '+ str(err_1Deriv)+
                                                                                                                                                 '   '+ str(Time_abs_minDerivGTS[pos7])+ '   '+ str(SZA_minDerivGTS[pos7]) + '   '+ str(abs_minDerivGTS[pos7])+ '   '+ str(err_1Deriv)+ '   '+ str(Time_abs_maxSensb_HeatFlux[pos8])+ '   '+ str(SZA_maxSensb_HeatFlux[pos8]) + '   '+ str(abs_maxSensb_HeatFlux[pos8])+ '   '+ str(Time_abs_minSensb_HeatFlux[pos8]) + '   '+ str(SZA_minSensb_HeatFlux[pos8])+ '   '+ str(abs_minSensb_HeatFlux[pos8])+ '   '+ str(err_Sensb_HeatFlux)+ '   '+ str(mean_Difference[pos9]) + '   '+ str(rms_Difference[pos9])+ '   '+ str(mean_Ta_nominal[pos10])+ '   '+ str(rms_Ta_nominal[pos10])+ '   '+ str(mean_Tg_nominal[pos3])+ '   '+ str(rms_Tg_nominal[pos3])+ '   '+ str(mean_Sensb_HeatFlux[pos8])+ '   '+ str(rms_Sensb_HeatFlux[pos8])+ '   '+ str(current_ABC1_TOA[pos5])+ '   '+ str(tau_UV[pos5])+ '   '+ str(time_abs_maxDiff[pos0])+ '   '+ str(SZA_abs_maxDiff[pos0])+ '   '+str(abs_maxDiff[pos0])+ '   '+str(T1[pos0])+ '   '+str(T2[pos0])+ '   '+ str(Time_abs_maxUV_Temp[pos6])+ '   '+ str(SZA_maxUV_Temp[pos6])+ '   '+str(abs_maxUV_Temp[pos6])+ '   '+ str(Time_abs_minUV_Temp[pos6])+ '   '+ str(SZA_minUV_Temp[pos6])+ 
                                                                                                                                                 '   '+str(abs_minUV_Temp[pos6]) + '   ' + str(EXTREMA_VMR_GTS[pos12])+ '   ' + str(EXTREMA_boom1[pos13])+ '   ' + str(EXTREMA_boom2[pos14]) + '   ' + str(AVERAGE_MAX_MIN[pos15]) + '\n')               
-                                                                                                                                            
+                                                                                                                                                    
 
 
 
