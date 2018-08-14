@@ -360,7 +360,7 @@ def RAD_AVG_MAX_MIN():
                 sun = file[16:21]
                 with open(in_file_path17 + 'AVERAGE_MAX_MIN_' + sun + '.dat','r') as input_file:
                     if (os.stat(in_file_path17 + 'AVERAGE_MAX_MIN_' + sun + '.dat').st_size == 0):
-                        i = -1.00
+                        i = "-1.00  -1.00 -1.00 -1.00 -1.00 -1.00 -1.00 -1.00 -1.00 -1.00"
                         array1.append(i)
                     for i in input_file:
                         col = i.split()
